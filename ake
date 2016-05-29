@@ -1,9 +1,12 @@
 #!/usr/bin/env bash
 
+main() {
+  build
+}
+
 build() {
-  rm -r dist/* 2>/dev/null
-  babel --presets es2015,stage-0 lib --out-dir dist --ignore lib/secrets.js
-  cp lib/secrets.js dist
+  rm -r lib 2>/dev/null
+  babel --presets es2015,stage-0 src --out-dir lib
 }
 
 test() {
@@ -15,7 +18,7 @@ publish() {
 }
 
 case "$1" in
-  b | build) build ;;
+  "" ) main ;;
   t | test) test ;;
   p | publish ) publish ;;
 esac
