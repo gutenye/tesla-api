@@ -92,7 +92,8 @@ odometer, batteryRange, etc returns in kilometer unit instead of mile
 
 Read the source for now :)
 
-**Projects using this library**
+Projects using this library
+---------------------------
 
 > Feel free to send a PR to include your projects.
 
