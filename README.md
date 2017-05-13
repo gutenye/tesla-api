@@ -76,10 +76,6 @@ Convert response key from underscore to camelCase
 }
 ```
 
-**Better Error Handling**
-
-...
-
 **Automatical re-Authentication**
 
 When credientals are expires, automatically authenticate it again.
