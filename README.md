@@ -13,8 +13,6 @@ tesla-api, Unofficial API Wrapper for Tesla Model S and X
 | **Install**    |                                                            |
 | Node           | $ npm install tesla-api                                    |
 
-This is a part of [GutTesla](https://github.com/gutenye/guttesla) project.
-
 Philosophy
 -----------
 
