@@ -11,7 +11,7 @@ tesla-api, Unofficial API Wrapper for Tesla Model S and X
 |                |                                                            |
 |----------------|------------------------------------------------------------|
 | **Install**    |                                                            |
-| Node           | $ npm install tesla-api                                    |
+| Node           | yarn add tesla-api                                    |
 
 Philosophy
 -----------
