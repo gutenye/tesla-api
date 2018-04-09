@@ -6,7 +6,7 @@ main() {
 
 build() {
   rm -r lib 2>/dev/null
-  babel --presets es2015,stage-0 src --out-dir lib
+  babel src --out-dir lib
 }
 
 test() {
@@ -19,6 +19,7 @@ publish() {
 
 case "$1" in
   "" ) main ;;
+  b | build ) build ;;
   t | test) test ;;
   p | publish ) publish ;;
 esac

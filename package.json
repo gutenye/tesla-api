@@ -1,6 +1,6 @@
 {
   "name": "tesla-api",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Unofficial API Wrapper for Tesla Model S and X",
   "main": "index.js",
   "scripts": {
@@ -9,17 +9,29 @@
   "author": "",
   "license": "MIT",
   "repository": "gutenye/tesla-api",
+  "babel": {
+    "presets": [
+      [
+        "modern-browsers",
+        {
+          "edge": false
+        }
+      ]
+    ],
+    "plugins": [
+      "@babel/plugin-proposal-class-properties"
+    ]
+  },
   "dependencies": {
     "axios": "^0.9.1",
-    "babel-polyfill": "^6.3.14",
-    "babel-polyfill-safer": "^6.6.1",
     "convert-units": "^0.6.0",
     "debug": "*",
     "rxjs": "^5.0.0-beta.1"
   },
   "devDependencies": {
-    "babel-core": "^6.9.0",
-    "babel-preset-es2015": "^6.9.0",
-    "babel-preset-stage-0": "^6.5.0"
+    "@babel/cli": "^7.0.0-beta.44",
+    "@babel/core": "^7.0.0-beta.44",
+    "@babel/plugin-proposal-class-properties": "^7.0.0-beta.44",
+    "babel-preset-modern-browsers": "^12.0.0-beta.0"
   }
 }

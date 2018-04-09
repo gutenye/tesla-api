@@ -2,6 +2,7 @@ tesla-api, Unofficial API Wrapper for Tesla Model S and X
 ===================================================
 
 [Homepage](https://github.com/gutenye/tesla-api) |
+[API Documentation](https://timdorr.docs.apiary.io) | 
 [Issue Tracker](https://github.com/gutenye/tesla-api/issues) |
 [MIT License](http://choosealicense.com/licenses/mit) |
 [by Guten](http://guten.me) |
@@ -31,6 +32,7 @@ async function main() {
     const vehicles = await Tesla.login({email: x, password: y})
     const vehicle = vehicles[0]
     const chargeState = await vehicle.chargeState()
+    console.log(chargeState)              //-> { chargeState: 'Completed', ... }
   } catch (err) {
     if (err.status) {                     // 4xx, 5xx response error
       console.log(`<${err.status} ${err.message}>`, err.response.body)
@@ -90,7 +92,7 @@ odometer, batteryRange, etc returns in kilometer unit instead of mile
 
 **API Reference**
 
-Read the source for now :)
+Read the source for now :), also see [API Documentation](https://timdorr.docs.apiary.io) for a reference.
 
 Projects using this library
 ---------------------------

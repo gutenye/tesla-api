@@ -1,7 +1,6 @@
 import utils from "./utils"
 
-export function newError(options={}) {
-  var {status} = options
+export function newError({ status, data }) {
   var klass = null
   switch (status) {
     case 400: klass = BadRequest; break
@@ -10,7 +9,7 @@ export function newError(options={}) {
     case 404: klass = NotFound; break
     case 405: klass = MethodNotAllowed; break
     case 406: klass = NotAcceptable; break
-    case 408: klass = error_for_408(options); break
+    case 408: klass = error_for_408({ status, data }); break
     case 409: klass = Conflict; break
     case 415: klass = UnsupportedMediaType; break
     case 422: klass = UnprocessableEntity; break
@@ -25,24 +24,27 @@ export function newError(options={}) {
     else if (status >= 500 && status <= 599)
       klass = ServerError
     else
-      klass = Error
+      klass = HttpError
   }
-  return new klass(options)
+
+  return new klass({status, data})
 }
 
-function error_for_408(options) {
-  switch (options.body["error"]) {
+function error_for_408({data}) {
+  switch (data["error"]) {
     case "vehicle unavailable": return VehicleUnavailable
     default: return RequestTimeout
   }
 }
 
 class HttpError extends Error {
-  // {status, body}
-  constructor(options) {
-    super(`${options.status} ${options.body["error"]}`)
+  // { status, data }
+  constructor({status, data}) {
+    super(JSON.stringify(data))
+    pd(1, this.constructor.name)
     this.name = this.constructor.name
-    Object.assign(this, utils.pick(options, "status", "body"))
+    this.status = status
+    this.data = data
   }
 }
 
