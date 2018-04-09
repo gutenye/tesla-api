@@ -28,9 +28,9 @@ import Tesla from "tesla-api"
 
 async function main() {
   try {
-    var vehicles = await Tesla.login({email: x, password: y})
-    var vehicle = vehicles[0]
-    var chargeState = await vehicle.chargeState()
+    const vehicles = await Tesla.login({email: x, password: y})
+    const vehicle = vehicles[0]
+    const chargeState = await vehicle.chargeState()
   } catch (err) {
     if (err.status) {                     // 4xx, 5xx response error
       console.log(`<${err.status} ${err.message}>`, err.response.body)
