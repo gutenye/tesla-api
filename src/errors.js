@@ -41,7 +41,6 @@ class HttpError extends Error {
   // { status, data }
   constructor({status, data}) {
     super(JSON.stringify(data))
-    pd(1, this.constructor.name)
     this.name = this.constructor.name
     this.status = status
     this.data = data
