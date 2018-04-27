@@ -38,7 +38,6 @@ export class Stream {
     var {email} = this.tesla
     var path = `/stream/${vehicleId}?values=speed,odometer,soc,elevation,est_heading,est_lat,est_lng,power,shift_state,range,est_range`
     cdebug("GET %s%s", STREAM_HOST, path)
-    pd("GET streaming.vn.teslamotors.com")
 
     this.req = https.request({
       method: "GET",

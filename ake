@@ -9,6 +9,11 @@ build() {
   babel src --out-dir lib
 }
 
+watch() {
+  rm -r lib 2>/dev/null
+  babel -w src --out-dir lib
+}
+
 test() {
   ./test.js
 }
@@ -20,6 +25,7 @@ publish() {
 case "$1" in
   "" ) main ;;
   b | build ) build ;;
+  w | watch ) watch ;;
   t | test) test ;;
   p | publish ) publish ;;
 esac
