@@ -1,6 +1,6 @@
 {
   "name": "tesla-api",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "Unofficial API Wrapper for Tesla Model S and X",
   "main": "index.js",
   "scripts": {
